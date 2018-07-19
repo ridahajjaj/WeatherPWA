@@ -280,16 +280,16 @@ body {
         -ms-flex-positive: 1;
             flex-grow: 1; }
   .weather-forecast .current .sunset:before {
-    content: "Sunset: ";
+    content: "غروب الشمس Sunset: ";
     color: #888; }
   .weather-forecast .current .wind:before {
-    content: "Wind: ";
+    content: "رياح Wind: ";
     color: #888; }
   .weather-forecast .current .sunrise:before {
-    content: "Sunrise: ";
+    content: "شروق الشمس Sunrise: ";
     color: #888; }
   .weather-forecast .current .humidity:before {
-    content: "Humidity: ";
+    content: "رطوبة Humidity: ";
     color: #888; }
   .weather-forecast .current .pollen:before {
     content: "Pollen Count: ";

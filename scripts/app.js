@@ -118,7 +118,7 @@
     card.querySelector('.date').textContent = current.date;
     card.querySelector('.current .icon').classList.add(app.getIconClass(current.code));
     card.querySelector('.current .temperature .value').textContent =
-      Math.round(current.temp);
+      Math.round((current.temp - 32) / (9 / 5));
     card.querySelector('.current .sunrise').textContent = sunrise;
     card.querySelector('.current .sunset').textContent = sunset;
     card.querySelector('.current .humidity').textContent =
@@ -137,9 +137,9 @@
           app.daysOfWeek[(i + today) % 7];
         nextDay.querySelector('.icon').classList.add(app.getIconClass(daily.code));
         nextDay.querySelector('.temp-high .value').textContent =
-          Math.round(daily.high);
+          Math.round((daily.high- 32) / (9 / 5));
         nextDay.querySelector('.temp-low .value').textContent =
-          Math.round(daily.low);
+          Math.round((daily.low- 32) / (9 / 5));
       }
     }
     if (app.isLoading) {
@@ -166,6 +166,8 @@
    */
   app.getForecast = function(key, label) {
     var statement = 'select * from weather.forecast where woeid=' + key;
+
+
     var url = 'https://query.yahooapis.com/v1/public/yql?format=json&q=' +
         statement;
     // TODO add cache logic here
@@ -363,6 +365,9 @@
              .register('./service-worker.js')
              .then(function() { console.log('Service Worker Registered'); });
   }
+
+
+
 })();
 
 
